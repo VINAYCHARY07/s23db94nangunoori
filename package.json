@@ -1,5 +1,5 @@
 {
-  "name": "s23wb94nangunoori",
+  "name": "s23db94nangunoori",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,8 @@
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
     "pub": "^0.2.0",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "utils-merge": "^1.0.1"
   },
   "main": "app.js",
   "author": "",
