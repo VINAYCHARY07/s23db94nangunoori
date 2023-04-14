@@ -1,18 +1,12 @@
-extends layout
-
 block content
-    h1= title
-    - let results=[{patient_Name: "Vijay",patient_Age:29,Mail_Id:"Vijay@gmail.com"},{patient_Name: "ajay",patient_Age:26,Mail_Id:"ajay@gmail.com"},{patient_Name: "poojitha",patient_Age:33,Mail_Id:"poojitha@gmail.com"}]
-    div.container-fliud
-        div.row
-            each item,ind in results 
-                div(class='col-sm-2' onclick=`buy(${ind})`) 
-                    p Name  is #{item.patient_Name}
-                    p Age  is #{item.patient_Age}
-                    p Mail_Id: #{item.Mail_Id}
-    each ite,index in results
-        p value at index #{index} is : #{ite.patient_Name},#{ite.patient_Age},#{ite.Mail_Id}
-    script. 
-        function buy(i){
-            alert("You purchased item "+(i+1))
-        }
+  h1= title
+  p
+   - let result=results
+    div(class="container-fliud")
+        div(class="row")
+            each item,ind in result 
+                div(class="col-sm-2" onclick=`buy(${ind})`)  
+                    p Name  #{item.patient_Name}
+                    p Age   #{item.patient_Age}
+                    p Mail_Id  #{item.Mail_Id}
+    

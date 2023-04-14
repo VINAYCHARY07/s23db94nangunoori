@@ -27,3 +27,16 @@ res.send('NOT IMPLEMENTED: doctor delete DELETE ' + req.params.id);
 exports.doctor_update_put = function(req, res) {
 res.send('NOT IMPLEMENTED: doctor update PUT' + req.params.id);
 };
+// VIEWS
+// Handle a show all view
+exports.doctor_view_all_Page = async function(req, res) {
+try{
+thedoctor = await doctor.find();
+res.render('doctor', { title: 'doctor Search Results', results: thedoctor });
+}
+catch(err){
+res.status(500);
+res.send(`{"error": ${err}}`);
+}
+};
+
