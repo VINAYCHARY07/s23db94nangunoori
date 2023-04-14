@@ -16,9 +16,29 @@ exports.doctor_detail = function(req, res) {
 res.send('NOT IMPLEMENTED: doctor detail: ' + req.params.id);
 };
 // Handle doctor create on POST.
-exports.doctor_create_post = function(req, res) {
-res.send('NOT IMPLEMENTED: doctor create POST');
-};
+//exports.doctor_create_post = function(req, res) {
+//res.send('NOT IMPLEMENTED: doctor create POST');
+//};
+// Handle doctor create on POST.
+exports.doctor_create_post = async function(req, res) {
+    console.log(req.body)
+    let document = new doctor();
+    // We are looking for a body, since POST does not have query parameters.
+    // Even though bodies can be in many different formats, we will be picky
+    // and require that it be a json object
+    // {"costume_type":"goat", "cost":12, "size":"large"}
+    document.patient_Name = req.body.patient_Name;
+    document.patient_Age = req.body.patient_Age;
+    document.Mail_Id = req.body.Mail_Id;
+    try{
+    let result = await document.save();
+    res.send(result);
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
+   };
 // Handle doctor delete form on DELETE.
 exports.doctor_delete = function(req, res) {
 res.send('NOT IMPLEMENTED: doctor delete DELETE ' + req.params.id);
