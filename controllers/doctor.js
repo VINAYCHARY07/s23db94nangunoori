@@ -1,8 +1,16 @@
 var doctor = require('../models/doctor');
-// List of all doctors
-exports.doctor_list = function(req, res) {
-res.send('NOT IMPLEMENTED: doctor list');
-};
+// List of all Costumes
+exports.doctor_list = async function(req, res) {
+    try{
+    thedoctor = await doctor.find();
+    res.send(thedoctor);
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
+    };
+    
 // for a specific doctor.
 exports.doctor_detail = function(req, res) {
 res.send('NOT IMPLEMENTED: doctor detail: ' + req.params.id);
