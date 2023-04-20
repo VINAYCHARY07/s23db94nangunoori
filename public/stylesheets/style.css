@@ -4,5 +4,16 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #0d9dd6;
 }
+ .doctorAttr {
+  background-color: rgb(242, 128, 6);
+  width: 120px;
+ }
+ .doctorAttr{
+  background-color:yellow;
+  width: 120px;
+ }
+ h1{
+  color:darkred
+ }

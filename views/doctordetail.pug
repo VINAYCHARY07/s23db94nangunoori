@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+  if(toShow == null)
+  h2 not instance to detail
+  else
+  - let doctorid = toShow._id
+  - let patient_Name= toShow.patient_Name
+  - let patient_Age = toShow.patient_Age
+  - let Mail_Id = toShow.Mail_Id
+  div
+    div.row
+      div(class='doctorAttr mr-3') doctor ID is:
+      div #{doctorid}
+    div.row
+      div(class='doctorAttr mr-3') patient_Name is:
+      div #{patient_Name}
+    div.row
+      div(class='doctorAttr mr-3') patient_Age is:
+      div #{patient_Age}
+    div.row
+      div(class='doctorAttr mr-3') Mail_Id is:
+      div #{Mail_Id}
