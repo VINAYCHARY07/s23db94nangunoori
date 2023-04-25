@@ -22,8 +22,16 @@ block content
    div(class="row m-1")
     each item in items
      - let destination = `dispatch(\"/doctor/update?id=${item._id}\")`
+     - let distance  = `dispatch(\"/doctor/delete?id=${item._id}\")`
+     - let day  = `dispatch(\"/doctor/detailid=${item._id}\")`
      div(class="row-sm-2", class="m-1") Item #{item.patient_Name}(#{item.patient_Age}) is #{item.Mail_Id}
+     p 
       button.btn( class="btn-primary ml-1", onclick= destination) Update
+      p 
+      button.btn( class="btn-primary ml-1", onclick= distance) delete 
+      p 
+      button.btn( class="btn-primary ml-1", onclick= day) detail
+
 
   script.
    function dispatch(path){
